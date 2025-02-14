@@ -1,0 +1,10 @@
+{
+    "format": "bv*+ba/b",
+    "outtmpl": "./downloads/%(uploader)s/%(title)s.%(ext)s",
+    "noplaylist": true,
+    "writesubtitles": true,
+    "subtitleslangs": ["en"],
+    "subtitlesformat": "srt",
+    "writeautomaticsub": true,
+    "nocheckcertificate": true
+}

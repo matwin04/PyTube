@@ -1,5 +1,12 @@
-import sys
-from pathlib import Path
+import yt_dlp as ytDlp
+import json
 
-from PySide6.QtGui import QGuiApplication
-from PySide6.QtQml import QQmlApplicationEngine
+# Load ydlOpts.json
+with open("ydlOpts.json", "r") as f:
+    ydlOpts = json.load(f)
+
+URL = input("YT URL: ")
+
+with ytDlp.YoutubeDL(ydlOpts) as ydl:
+    info = ydl.extract_info(URL, download=True)
+    print(json.dumps(ydl.sanitize_info(info), indent=2))
